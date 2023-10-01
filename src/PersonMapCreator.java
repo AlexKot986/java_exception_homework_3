@@ -54,14 +54,12 @@ public class PersonMapCreator {
         return lastName.matches("^[а-яА-Я]+$");
     }
     private boolean isNumber(String phoneNumber){
-        return phoneNumber.matches("(\\+*)\\d{11}|\\d{11}");
+        return phoneNumber.matches("(\\+*)\\d{11}");
     }
     private boolean isDate(String s) {
         return s.matches("([0-9]{2}).([0-9]{2}).([0-9]{4})");
     }
-    private boolean isGender(String st) {
-        return st.length() == 1 & (st.equals("m") || st.equals("f"));
-    }
+    private boolean isGender(String st) { return st.matches("[fm]{1}"); }
 
     @Override
     public String toString() {
